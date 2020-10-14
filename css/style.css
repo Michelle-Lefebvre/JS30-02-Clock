@@ -1,0 +1,103 @@
+html {
+    font-family: 'helvetica neue';
+    text-align: center;
+    font-size: 15px;
+}
+
+body {
+    align-items: center;
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: #56ab2f;
+    /* fallback for old browsers */
+    background: linear-gradient(to right, #a8e063, #56ab2f);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex: 1;
+    font-size: 2rem;
+    margin: 0;
+    min-height: 100vh;
+    /* prevents scrolling */
+    overflow: hidden;
+}
+
+.clock {
+    background: #56ab2f;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #a8e063, #56ab2f);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 20px solid white;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0, 0, 0, 0.2);
+    height: 30rem;
+    margin: 50px auto;
+    position: relative;
+    /* padding: 2rem; */
+    width: 30rem;
+}
+
+.clock-face {
+    height: 100%;
+    position: relative;
+    transform: translateY(-3px);
+    /* account for the height of the clock hands */
+    width: 100%;
+}
+
+img {
+    display: block;
+    filter: alpha(opacity=90);
+    /* For IE8 and earlier */
+    /* margin-left: -0.3rem; */
+    margin-top: 0.4rem;
+    opacity: 0.7;
+    position: fixed;
+    width: 30rem;
+}
+
+.hand,
+.hour {
+    height: 6px;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    /* change rotation point to right end */
+    transform: rotate(90deg);
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.05s;
+    width: 50%;
+}
+
+.hour-hand {
+    width: 35%;
+    left: 15%;
+}
+
+.min-hand {
+    width: 45%;
+    left: 5%;
+}
+
+.clock-face>.hand:nth-child(1) {
+    background-color: black;
+    height: 3%;
+    transform: translateX(-3px);
+}
+
+.clock-face>.hand:nth-child(2) {
+    background-color: #ff6f69;
+    height: 2%;
+    transform: translateX(-2px);
+}
+
+.hand:nth-child(3) {
+    background-color: gold;
+    height: .7%;
+    transform: translateX(-1px);
+}
